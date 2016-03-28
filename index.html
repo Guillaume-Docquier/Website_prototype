@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Vélomane - Accueil</title>
+		<meta name="description" content="Site web du magasin Velomane" />
+		<meta name="keywords" content="website, velomane, velo, carbone, gilles caron, guillaume docquier, sylvain bilodeau, hochelaga, montreal" />
+		<meta name="author" content="Velomane" />
+		<link rel="shortcut icon" href="img/tab-icon.png">
+
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+		
+		<script src="js/sweetalert.min.js"></script> 
+		<script type="text/javascript" src="js/controlForm.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="js/responsiveslides.min.js"></script>
+		
+		<script type="text/javascript">
+		$(document).ready(function () {
+			//localStorage.clear();
+			var alerted = localStorage.getItem('alerted') || '';
+			if (alerted != 'yes') {
+				swal({   
+				title: "Nouveau site!",   
+				text: "Bienvenue sur le nouveau site de Vélomane. Il est encore tout neuf et votre avis est important. N'hésitez pas à nous faire parvenir vos commentaires et suggestions dans la section contactez-nous.",  
+				imageUrl: "img/info.png",				
+				showCancelButton: true,   
+				confirmButtonColor: "#55BB6B",   
+				confirmButtonText: "D'accord!", 				
+				cancelButtonText: "Ne plus afficher.",   
+				closeOnConfirm: true,   
+				closeOnCancel: true }, 
+				function(isConfirm){   
+					if (!isConfirm) {    
+						localStorage.setItem('alerted','yes');    
+					} 
+				});
+			}
+		});
+		</script>
+		
+		<script>
+			$(function() {
+				$(".rslides").responsiveSlides({
+					maxwidth: 1000,
+					speed: 500
+				});
+			});
+		</script>
+		
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+	</head>
+	
+	<body>
+<!-- Début container -->
+        <div class="container">
+		
+            <!-- Titre de la page -->
+            <header class="codrops-header">
+                <h1>Le Vélomane <span>Fabricant de vélos sur mesure</span></h1>
+            </header>
+
+<!-- Début top menu -->
+			<div class="menu-wrap">
+				<nav class="menu">
+					<ul class="clearfix">
+						<li class="current-item"><a href="index.html">Accueil</a></li>
+						<li><a href="indexVelo.html">Nos produits <i class="fa fa-angle-down"></i></a>
+							<ul class="sub-menu">
+								<li><a href="velos.html">Les vélos</a></li>
+								<li><a href="vetements.html">Les vêtements</a></li>
+								<li><a href="accessoires.html">Les accessoires</a></li>
+							</ul>
+						</li>
+						<li><a href="indexServices.html">Nos services</a></li>
+						<li><a href="indexCompagnie.html">Notre compagnie</a></li>
+						<li><a href="indexContact.html">Contactez-nous</a></li>
+					</ul>
+				</nav>
+			</div>
+<!-- Fin top menu -->
+			
+<!-- Début content -->
+			<div class="content">
+			
+<!-- Début slideshow -->
+                <div id="wrapper">
+					<ul class="rslides" id="slider">
+						<li><a href="speciaux.html"><img src="img/dummy-felt1.jpg" alt="" /></a></li>
+						<li><a href="speciaux.html"><img src="img/dummy-felt2.jpg" alt="" /></a></li>
+						<li><a href="speciaux.html"><img src="img/dummy-felt3.jpg" alt="" /></a></li>
+						<li><a href="speciaux.html"><img src="img/dummy-felt4.jpg" alt="" /></a></li>
+					</ul>
+				</div>
+<!-- Fin slideshow-->
+				<div class="actu-wrap">
+					<div class="titre">
+						<span>Actualité</span>
+						<div class="ligne-horizontale"></div>
+					</div>
+                    <div class="center">
+                        <div class="actualite">
+                            <img src="img/rezo.jpg" />
+                            <h2>Vélomane s'associe à REZOsanté</h2>
+                            <div class="actu-text">
+                                REZO est un organisme sans but lucratif qui a pour but d'aider les hommes homosexuels et bisexuels à garder le contrôle sur leur santé.
+                                Vélomane offre donc aux intervenants de REZO un vélo pour les aider dans leur mission.
+                                Plus de détails sur <a href="http://www.rezosante.org/mission.html">leur site</a>.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center">
+                        <div class="actualite">
+                            <img src="img/oka.jpg" />
+                            <h2>Jolianne melançon et le triathlon d'Oka</h2>
+                            <div class="actu-text">
+                                À peine une semaine après son duathlon à Oka, Joliane Melançon complète le triathlon de Joliette! Elle décroche la 4e position dans sa catégorie d'age et le 11e rang chez les femmes! Bravo!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center">
+                        <div class="actualite">
+                            <img src="img/briseGlace.jpg" />
+                            <h2>Fier partenaire du Défi Brise-Glaces 2015</h2>
+                            <div class="actu-text">
+                                Parce qu'il n'y a pas que le vélo pour se mettre en forme, l'équipe Vélomane est fière d'encourager le défi brise-glaces! Le marathon aura lieu à Varennes le 31 mai 2015. Plus de détails sur <a href="www.http://brise-glaces.ca/">leur site</a>.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+					<div class="view-more">
+                        <a href="actualite.html">Voir toute l'actualité</a>
+                    </div>
+                    <div class="clear"></div>
+				</div>
+			</div>
+<!-- Fin content -->
+
+<!-- Début footer -->
+			<footer class="footer-wrap">
+				<div class="info-wrap">
+                    <div class="info">
+                        <h1>Liens rapides</h1>
+                        <span><a href="indexCompagnie.html">Qui sommes nous?</a></span>
+                        <span><a href="actualite.html">L'actualité</a></span>
+                        <span><a href="speciaux.html">Les spéciaux</a></span>
+                        <span><a href="indexVelo.html">Nos produits</a></span>
+                        <span><a href="indexServices.html">Nos services</a></span>
+                        <span><a href="indexContact.html?type=commentaire#typeCommentaire">Suggestions et commentaires</a></span>
+                        <span><a href="indexContact.html?type=bug#typeCommentaire">Rapporter un bug</a></span>
+                    </div>
+                    <div class="info">
+                        <h1>Contactez-nous</h1>
+                        <form method="POST" id='contactForm' name="contactForm" enctype="multipart/form-data" accept-charset="UTF-8">
+                            <!-- avoir le type de requete -->
+                            <div id="type"><select name="type"><option value="question" selected></option></select></div>
+                            <!-- avoir la page -->
+                            <div id="page"><select name="page"><option value="index" selected></option></select></div>
+                            <div>
+                                <input name="email" placeholder="Votre email *"></input><br>
+                            </div>
+                            <div>
+                                <textarea name="question" placeholder="Votre question *"></textarea><br>
+                            </div>
+                            <input name="envoyer" type="button" value=" Envoyer " onclick="validationForm('contactForm')" class="contactSubmit">
+                        </form>
+                    </div>
+                    <div class="info">
+                        <h1>Velomane Montréal</h1>
+                        <span>Lundi à mercredi: 9h-18h</span>
+                        <span>Jeudi et vendredi: 9h-19h</span>
+                        <span>Samedi et dimanche: 9h-15h</span>
+                        <br>
+                        <span>3898 Hochelaga, Montréal, H1W 1J7</span>
+                        <span>Entre les métros Pie-IX et Joliette</span>
+                        <span>(514) 259-7606</span>
+                        <span><a href="mailto:velomane@velomane.com">velomane@velomane.com</a></span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+				<div class="credits">
+					© 2015 Vélomane enr., Tous droits réservés &nbsp;&nbsp;|&nbsp;&nbsp;   Webmestre: Guillaume Docquier   &nbsp;&nbsp;|&nbsp;&nbsp;   Hébergé par Services Web Québec
+				</div>
+			</footer>
+<!-- Fin footer -->
+
+		</div>
+<!-- Fin container -->
+
+        <!-- Static background using JQuery plugin-->
+        <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+
+        <script type="text/javascript">
+            $.backstretch("img/boutiqueBackground.jpg");
+        </script>
+
+	</body>
+</html>

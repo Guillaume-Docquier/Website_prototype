@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Vélomane - Contactez-nous</title>
+        <meta name="description" content="Site web du magasin Velomane" />
+        <meta name="keywords" content="website, velomane, velo, carbone, gilles caron, guillaume docquier, sylvain bilodeau, hochelaga, montreal" />
+        <meta name="author" content="Velomane" />
+		<link rel="shortcut icon" href="img/tab-icon.png">
+
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+		
+		<script src="js/sweetalert.min.js"></script> 
+		<script type="text/javascript" src="js/controlForm.js"></script>
+		<script type="text/javascript" src="js/geturl.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+		<!-- Ouvrir la bonne requête -->
+		<script type="text/javascript">
+			$(document).ready(function () {
+				var type = getQueryVariable("type");
+				if (type != "") {
+					document.getElementById('typeCommentaire').value=type;
+					$("#" + type).show().siblings().hide();
+				}
+			});
+		</script>
+		
+		<!-- Afficher le bon formulaire -->
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$("#typeCommentaire").on("change", function() {
+					$("#" + $(this).val()).fadeIn(400).siblings().hide();
+				});
+			});
+		</script>	
+<!-- Debut init google Maps -->
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+		<script type="text/javascript"> 
+			function init_map(){
+				var myOptions = {
+					zoom:16,
+					center:new google.maps.LatLng(45.5504763,-73.54921179999997),
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+		map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+		marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(45.5504763, -73.54921179999997)});
+		infowindow = new google.maps.InfoWindow({content:"<b><font color='red'>Boutique V&eacute;lomane</b></font><br/><font color='black'>3898, Hochelaga<br/>H1W 1J7 Montreal</font>" });
+		google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});
+		infowindow.open(map,marker);}
+		google.maps.event.addDomListener(window, 'load', init_map);
+		google.maps.event.addDomListener(window, "resize", function() {
+			var center = map.getCenter();
+			google.maps.event.trigger(map, "resize");
+			map.setCenter(center); 
+		});
+		</script>
+<!-- Fin init google Maps -->
+		
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+	</head>
+	
+	<body>
+<!-- Début container -->
+		<div class="container">
+
+			<!-- Titre de la page -->
+			<header class="codrops-header">
+				<h1>La boutique Vélomane <span>Comment nous trouver</span></h1>
+			</header>		
+		
+<!-- Début top menu -->
+			<div class="menu-wrap">
+				<nav class="menu">
+					<ul class="clearfix">
+						<li><a href="index.html">Accueil</a></li>
+						<li><a href="indexVelo.html">Nos produits <i class="fa fa-angle-down"></i></a>
+							<ul class="sub-menu">
+								<li><a href="velos.html">Les vélos</a></li>
+								<li><a href="vetements.html">Les vêtements</a></li>
+								<li><a href="accessoires.html">Les accessoires</a></li>
+							</ul>
+						</li>
+						<li><a href="indexServices.html">Nos services</a></li>
+						<li><a href="indexCompagnie.html">Notre compagnie</a></li>
+						<li class="current-item"><a href="indexContact.html">Contactez-nous</a></li>
+					</ul>
+				</nav>
+			</div>
+<!-- Fin top menu -->
+			
+<!-- Début content -->
+			<div class="content">
+                <div class="topshadow">
+                    <img src="img/universal_top_shadow.png" />
+                </div>
+                <div class="titre first">
+                    <span id="emplacement">L'emplacement</span>
+                    <div class="ligne-horizontale"></div>
+                </div>
+				
+				<div class="wrap">
+<!-- Debut insertion google maps -->
+					<div class="google-map">
+						<div id="gmap_canvas"></div>
+					</div>
+<!-- Fin insertion google maps -->
+
+<!-- Début Infos boutique -->
+					<div class="info-boutique">
+						<h2>Heures d'ouverture</h2>
+						<span>
+							Lundi à mercredi: 9h-18h<br>
+							Jeudi et vendredi: 9h-19h<br>
+							Samedi et dimanche: 9h-15h<br>
+						</span>
+						
+						<h2>Coordonnées</h2>
+						<span>
+							Adresse: 3898 Hochelaga<br>
+							Téléphone: (514) 259-7606<br>
+							E-mail: <a href="mailto:velomane@velomane.com">velomane@velomane.com</a><br>
+						</span>
+						<div class="reseaux-sociaux">
+							<a href="https://www.facebook.com/pages/V%C3%A9lomane/385838481449096" target="_blank"><i class="fa fa-facebook">&nbsp;</i></a>
+							<a href="https://twitter.com/vlomane" target="_blank"><i class="fa fa-twitter">&nbsp;</i></a><br>
+						</div>
+					</div>
+					<div class="clear"></div>
+<!-- Fin Infos boutique -->				
+				
+<!-- Debut zone commentaires -->					
+						<h2>Communiquez avec nous</h2>
+						<!-- Formulaire -->
+                        <form method="POST" name="selecteur" enctype="multipart/form-data" accept-charset="UTF-8">
+							<div>
+								<label>Veuillez choisir le type de votre requête: </label>
+								<select id="typeCommentaire">
+									<option value="bug">Bug</option>
+									<option value="commentaire">Commentaire</option>
+									<option value="question"selected>Question</option>
+								</select>
+							</div><br>
+						</form>
+						<div class="commentaires">
+							<div id="bug">
+								<form method="POST" id="bugForm" name="bugForm" enctype="multipart/form-data" accept-charset="UTF-8">
+									<!-- avoir le type de requete -->
+									<div id="type"><select name="type"><option value="bug" selected></option></select></div>
+                                    <!-- avoir la page -->
+                                    <div id="page"><select name="page"><option value="indexContact" selected></option></select></div>
+									<div class="form-row">
+										<!-- media -->
+										<div class="main-info">
+											<label>Média: <span>*</span></label>
+											<select id="media" class="has-tooltip" name="media">
+												<option value="" disabled selected>Choisir votre média</option>
+												<option value="Ordinateur">Ordinateur (Portable ou de bureau)</option>
+												<option value="Tablette">Tablette</option>
+												<option value="Mobile">Mobile</option>
+												<option value="Autre">Autre</option>
+											</select>
+											<label class="tooltip" for="media">Pourquoi est-ce important?<br>
+											Il arrive qu'un bug dépende de l'appareil que nous utilisons. Étant donné que le site est développé sur ordinateur, il est plus difficile de déceler des bugs apparaissant sur des appareils mobiles ou des tablettes.</label>
+										</div>
+										<!-- modèle -->
+										<div class="secondary-info">
+											<label>Modèle: </label>
+											<input id="modele" class="has-tooltip" name="modele" type="text" size="30" placeholder="Modèle..">
+											<label class="tooltip" for="modele">Le modèle de votre appareil donne un indice sur la résolution de votre écran. Cette information est cruciale lorsqu'il y a des bugs liés des affichages étranges ou qui semblent disproportionnés.</label>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<div class="form-row">
+										<!-- navigateur -->
+										<div class="main-info">
+											<label>Navigateur: <span>*</span></label>
+											<select id="navigateur" class="has-tooltip" name="navigateur">
+												<option value="" disabled selected>Choisir un navigateur</option>
+												<option value="Safari">Internet Explorer</option>
+												<option value="Chrome">Chrome</option>
+												<option value="Firefox">Mozilla Firefox</option>
+												<option value="Safari">Safari</option>
+												<option value="iOS-Safari">iOS Safari</option>
+												<option value="Opera-mini">Opera Mini</option>
+												<option value="Android-browser">Android Browser</option>
+												<option value="Android-Chrome">Chrome for Android</option>
+												<option value="Autre">Autre</option>
+											</select>
+											<label class="tooltip" for="navigateur">Les différents navigateurs interprètent différemment le code du site. Ainsi, il se peut que l'affichage change de façon indésirée d'un navigateur à l'autre.</label>
+										</div>
+										<!-- version -->
+										<div class="secondary-info">
+											<label>Version: </label>
+											<input id="version" class="has-tooltip" name="version" type="text" size="30" placeholder="Version..">
+											<label class="tooltip" for="version">Bien qu'il soit possible de tester sur plusieurs navigateurs, il est impossible de tester sur toutes les versions de ces navigateurs. Certains bugs ne sont présent que sur certaines des versions.</label>
+										</div>
+										<div class="clear"></div>
+									</div>
+                                    <!-- bugDesc -->
+									<div class="form-row">
+										<label>Description du bug: <span>*</span></label>
+										<textarea id="bugDesc" class="has-tooltip" name="bugDesc" placeholder="Description.."></textarea>
+										<label class="tooltip" for="bugDesc">Ce qui est utile à savoir:<br>
+										Il est essentiel de savoir précisément quel élément fait défaut et sur quelle page. Par exemple: La troisième image du caroussel de la page d'accueil est à l'envers.<br>
+										De plus, il  est bon de savoir comment provoquer un bug. Par exemple: Quand je regarde un vélo et que je clique sur l'onglet caractéristiques, le bouton "procurez-vous le en magasin" disparaît.</label>
+									</div>
+                                    <!-- send -->
+                                    <input name="envoyer" type="button" value=" Envoyer " onclick="return validationForm('bugForm')" class="contactSubmit">
+								</form>	
+							</div>
+						
+							<div id="commentaire">
+                                <form method="POST" id="commentForm" name="commentForm" enctype="multipart/form-data" accept-charset="UTF-8">
+                                    <!-- avoir le type de requete -->
+                                    <div id="type"><select name="type"><option value="commentaire" selected></option></select></div>
+                                    <!-- avoir la page -->
+                                    <div id="page"><select name="page"><option value="indexContact" selected></option></select></div>
+                                    <div class="form-row">
+                                        <label>Inscrivez votre message ici: <span>*</span></label>
+                                        <textarea id="commentaireText" class="has-tooltip" name="commentaire" placeholder="Votre message.."></textarea>
+										<label class="tooltip" for="commentaireText">N'hésitez pas à faire une critique constructive! Votre avis et vos idées nous aident à construire un meilleur site.</label>
+                                    </div>
+                                    <input name="envoyer" type="button" value=" Envoyer " onclick="return validationForm('commentForm')" class="contactSubmit">
+                                </form>
+							</div>
+							
+							<div id="question">
+								<form method="POST" id="questionForm" name="questionForm" enctype="multipart/form-data" accept-charset="UTF-8">
+									<!-- avoir le type de requete -->
+									<div id="type"><select name="type"><option value="question" selected></option></select></div>
+                                    <!-- avoir la page -->
+                                    <div id="page"><select name="page"><option value="indexContact" selected></option></select></div>
+									<div class="form-row">
+										<label>Votre e-mail: <span>*</span></label>
+										<input id="email" class="has-tooltip" name="email" placeholder="Votre email..">
+										<label class="tooltip" for="email">Votre adresse courriel sera utilisée SEULEMENT pour vous répondre. Nous ne l'utiliserons pas pour vous envoyer de la publicité.</label>
+									</div>
+									<div class="form-row">
+										<label>Inscrivez votre question ici: <span>*</span></label>
+										<textarea name="question" placeholder="Votre question.."></textarea><br>
+									</div>
+                                    <input name="envoyer" type="button" value=" Envoyer " onclick="return validationForm('questionForm')" class="contactSubmit">
+								</form>
+							</div>
+					</div>
+<!-- Fin zone commentaires -->
+				</div>
+			</div>
+<!-- Fin content -->
+			
+<!-- Début footer -->
+			<footer class="footer-wrap">
+				<div class="info-wrap">
+					<div class="info">
+						<h1>Liens rapides</h1>
+						<span><a href="indexCompagnie.html">Qui sommes nous?</a></span>
+						<span><a href="actualite.html">L'actualité</a></span>
+						<span><a href="speciaux.html">Les spéciaux</a></span>
+						<span><a href="indexVelo.html">Nos produits</a></span>
+						<span><a href="indexServices.html">Nos services</a></span>
+						<span><a href="indexContact.html?type=commentaire#typeCommentaire">Suggestions et commentaires</a></span>
+						<span><a href="indexContact.html?type=bug#typeCommentaire">Rapporter un bug</a></span>
+					</div>
+					<div class="info">
+						<h1>Contactez-nous</h1>
+						<form method="POST" id="contactForm" name="contactForm" enctype="multipart/form-data" accept-charset="UTF-8">
+							<!-- avoir le type de requete -->
+							<div id="type"><select name="type"><option value="contactForm" selected></option></select></div>
+							<!-- avoir la page -->
+							<div id="page"><select name="page"><option value="indexContact" selected></option></select></div>
+							<div>
+								<input name="email" placeholder="Votre email *"><br>
+							</div>
+							<div>
+								<textarea name="question" placeholder="Votre question *"></textarea><br>
+							</div>
+							<input name="envoyer" type="button" value=" Envoyer " onclick="validationForm('contactForm')" class="contactSubmit">
+						</form>
+					</div>
+					<div class="info">
+						<h1>Velomane Montréal</h1>
+						<span>Lundi à mercredi: 9h-18h</span>
+						<span>Jeudi et vendredi: 9h-19h</span>
+						<span>Samedi et dimanche: 9h-15h</span>
+						<br>
+						<span>3898 Hochelaga, Montréal, H1W 1J7</span>
+						<span>Entre les métros Pie-IX et Joliette</span>
+						<span>(514) 259-7606</span>
+						<span><a href="mailto:velomane@velomane.com">velomane@velomane.com</a></span>
+					</div>
+					<div class="clear"></div>
+				</div>	
+				<div class="credits">
+					© 2015 Vélomane enr., Tous droits réservés &nbsp;&nbsp;|&nbsp;&nbsp;   Webmestre: Guillaume Docquier   &nbsp;&nbsp;|&nbsp;&nbsp;   Hébergé par Services Web Québec
+				</div>
+			</footer>
+<!-- Fin footer -->
+
+		</div>
+<!-- Fin container -->
+
+        <!-- Static background using JQuery plugin-->
+        <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+
+        <script type="text/javascript">
+            $.backstretch("img/boutiqueBackground.jpg");
+        </script>
+
+	</body>
+</html>
