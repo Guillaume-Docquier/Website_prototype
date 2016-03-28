@@ -1,23 +1,10 @@
-# Guide de codage #
-Commenter le début et la fin des balises principales:
->
-    <!-- Début container -->
-    <div class="container">
-        blahblah
-    </div>
-    <!-- Fin container -->
+# Pages to see #
+* index.html
+* indexContact.html
+* indexVelo.html
+* amigo.html
+* velos.html
 
-Effectuer une identation adéquate:
->
-    <div>
-        <div>
-            <h2></h2>
-            <div>
-            </div>
-        </div>
-    </div>
-
-***
 # Plan du site #
 1. Page d'accueil
     1. Promotions
