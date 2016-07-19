@@ -4,7 +4,7 @@ This is a website I have built from the ground up when I first started learning 
 # What I haven't done myself
 I used the [SweetAlert](http://t4t5.github.io/sweetalert/) library for the stylish alerts throughout my website.  
 I've also borrowed the hover effect animation I use in the product sections from Mary Lou on [Codrops.net](http://tympanus.net/codrops/2014/06/19/ideas-for-subtle-hover-effects/).  
-The slideshow on the homepage was taken from [ResponsiveSlides](http://responsiveslides.com/).
+The slideshow on the homepage was taken from [ResponsiveSlides](http://responsiveslides.com/).  
 Other than that, it's all me!
 
 # Overview
